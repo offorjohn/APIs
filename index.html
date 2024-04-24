@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NY Times API example</title>
+  <script src="script.js" defer></script>
+  <link href="style.css" rel="stylesheet">
+  <style>
+    /* Add custom styles here */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f8f8;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .wrapper {
+      width: 80%;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .controls {
+      flex-basis: calc(50% - 20px);
+      padding: 10px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .controls form {
+      margin: 0;
+    }
+
+    .controls label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .controls input[type="text"],
+    .controls input[type="date"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    .controls button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .controls button:hover {
+      background-color: #0056b3;
+    }
+
+    .results {
+      flex-basis: calc(50% - 20px);
+      padding: 10px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    nav {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .prev,
+    .next {
+      padding: 8px 16px;
+      margin: 0 5px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .prev:hover,
+    .next:hover {
+      background-color: #0056b3;
+    }
+
+    section {
+      margin-top: 20px;
+    }
+
+    article {
+      padding: 10px;
+      margin-bottom: 20px;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    p {
+      margin-top: 0;
+      line-height: 1.5;
+    }
+
+    img {
+      float: right;
+      margin-left: 20px;
+      max-width: 200px;
+    }
+
+    .keywords span {
+      background-color: #007bff;
+      color: #fff;
+      padding: 3px 6px;
+      margin: 2px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+<h1>NY Times Article Search</h1>
+
+<div class="wrapper">
+  <div class="controls">
+    <form>
+      <p>
+        <label for="search">Enter a SINGLE search term (required): </label>
+        <input type="text" id="search" class="search" required>
+      </p>
+     
+      <p>
+        <button class="submit">Submit Search</button>
+      </p>
+    </form>
+  </div>
+
+  <div class="results">
+    <nav>
+      <button class="prev">Previous 10</button>
+      <button class="next">Next 10</button>
+    </nav>
+    <section></section>
+  </div>
+</div>
+
+</body>
+</html>
